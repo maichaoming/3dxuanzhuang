@@ -1,0 +1,84 @@
+input{
+	display: none;
+}
+label{
+	display: inline-block;
+	width: 70px;
+	height: 30px;
+	border: 1px solid black;
+	line-height: 30px;
+	border-radius: 6px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.mian{
+	width: 250px;
+	height: 250px;
+	margin: 150px auto;
+	perspective: 1000px;
+}
+.ti{
+	width: 250px;
+	height: 250px;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotate3d(3,23,8,-35deg);
+	transition: all .5s linear;
+}
+.ti div{
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	opacity: .8;
+	top: 0;
+	left: 0;
+}
+.ti div img{
+	width: 100%;
+	height: 100%;
+}
+.zheng1{
+	transform: translate3d(0,0,125px);
+}
+.fan1{
+	transform: rotateY(180deg) translate3d(0,0,125px);
+}
+.top1{
+	transform: rotateX(90deg) translate3d(0,0,125px);
+}
+.bottom1{
+	transform: rotateX(-90deg) translate3d(0,0,125px);
+}
+.left1{
+	transform: rotateY(90deg) translate3d(0,0,125px);
+}
+.right1{
+	transform: rotateY(-90deg) translate3d(0,0,125px);
+}
+#zheng:checked ~ .mian .ti{
+	transform: rotate3d(0,0,0,0deg);
+}
+#fan:checked ~ .mian .ti{
+	transform: rotateY(180deg);
+}
+#top:checked ~ .mian .ti{
+	transform: rotateX(-90deg);
+}
+#bottom:checked ~ .mian .ti{
+	transform: rotateX(90deg);
+}
+#left:checked ~ .mian .ti{
+	transform: rotateY(-90deg);
+}
+#right:checked ~ .mian .ti{
+	transform: rotateY(90deg);
+}
+#zheng:checked ~ label:nth-child(7),
+#fan:checked ~ label:nth-child(8),
+#top:checked ~ label:nth-child(9),
+#bottom:checked ~ label:nth-child(10),
+#left:checked ~ label:nth-child(11),
+#right:checked ~ label:nth-child(12){
+	background: #fa5546;
+}
